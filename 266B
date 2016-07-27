@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+typedef long long int ll;
+typedef unsigned long long int ull;
+const ll mod=1000000007;
+const ll INF = 1000000000000000000;
+using namespace std;
+ull prime(ull n) {if (n<=1)return 0;if(n<=3)return 1;if(n%2==0||n%3==0)return 0;for(ull i=5;i*i<=n;i+=6)if(n%(i)==0||n%(i+2)==0)return 0;return 1;}
+int main()
+{
+ll n,m;
+cin>>n>>m;
+string s;
+cin>>s;
+int ar[100];
+for (int i = 0; s[i]; ++i)
+{
+	if (s[i]=='G')
+	{
+		ar[i]=0;
+	}
+	else
+	{
+        ar[i]=1;
+	}
+}
+for (int i = 0; i <m; ++i)
+{
+	for(int j=n-2;j>=0;j--)
+	{
+		if (ar[j]==1 && ar[j+1]==0)
+		{
+			swap(ar[j],ar[j+1]);
+			//cout<<j<<" ";
+			j--;
+		}
+	}
+}
+for(int i=0;i<n;i++)
+{
+    if(ar[i]==1)
+    cout<<'B';
+    else
+    cout<<'G';
+}
+return 0;
+}
