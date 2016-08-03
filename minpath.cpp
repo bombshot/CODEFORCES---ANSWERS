@@ -56,13 +56,13 @@ cout<<ar[n-1][m-1];
 /*
 only right and down movements are allowed
 
-
+input->
 3 4
 1 3 5 8
 4 2 1 7
 4 3 2 3
 
-
+sol->
 1 4 9 17
 5 6 7 14
 9 9 9 12
