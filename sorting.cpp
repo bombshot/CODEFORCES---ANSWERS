@@ -38,6 +38,22 @@ void bubble_sorting(int ar[],int n)
 		ar[i]=temp;
 	}
 }
+void shell_sort(int ar[],int n){
+	int k = n/2 ;
+	for( ;k >= 1 ;k /= 2){
+		for(int i = k; i < n ;i++){
+			int j = i - k ;
+			int maxi = ar[i] ;
+			for( ;j >= 0 && ar[j] > maxi ;j -= k){
+				ar[j + k] = ar[j] ;
+			}
+			ar[j + k] = maxi ;
+		}
+	}
+	for(int i = 0 ;i < n ;i++){
+        cout << ar[i] << " " ;
+	}
+}
 void insertion_sorting(int ar[],int n)
 {
 	for(int i=1;i<n;i++)
